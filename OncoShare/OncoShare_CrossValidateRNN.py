@@ -110,27 +110,27 @@ for train_index, test_index in skf.split(xData, yData):
 
 print("ROC AUC")
 roc = np.array(roc)
-print(np.mean(roc) + 0.02)
+print(np.mean(roc))
 print(np.std(roc))
 print()
 print("PRECISION")
 prec = np.array(prec)
-print(np.mean(prec) + 0.02)
+print(np.mean(prec))
 print(np.std(prec))
 print()
 print("RECALL/SENSITIVITY")
 rec = np.array(rec)
-print(np.mean(rec) + 0.02)
+print(np.mean(rec))
 print(np.std(rec))
 print()
 print("SPECIFICITY")
 spec = np.array(spec)
-print(np.mean(spec) + 0.02)
+print(np.mean(spec))
 print(np.std(spec))
 print()
 print("F1")
 f1 = np.array(f1)
-print(np.mean(f1) + 0.02)
+print(np.mean(f1))
 print(np.std(f1))
 
 plt.plot([0, 1], [0, 1], linestyle='--', lw=2, color='r', label='Chance', alpha=.8)
@@ -139,7 +139,7 @@ mean_tpr[-1] = 1.0
 mean_auc = auc(mean_fpr, mean_tpr)
 std_auc = np.std(aucs)
 plt.plot(mean_fpr, mean_tpr, color='b',
-        label=r'Mean ROC (AUC = %0.2f $\pm$ %0.2f)' % (mean_auc + 0.02, std_auc),
+        label=r'Mean ROC (AUC = %0.2f $\pm$ %0.2f)' % (mean_auc, std_auc),
         lw=2, alpha=.8)
 
 std_tpr = np.std(tprs, axis=0)
